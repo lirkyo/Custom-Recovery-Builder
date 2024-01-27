@@ -84,6 +84,9 @@ jobs:
         echo "Device Tree: ${{ github.event.inputs.DEVICE_TREE }}"
         echo "Device Branch: ${{ github.event.inputs.DEVICE_TREE_BRANCH }}"
         echo "Device Path: ${{ github.event.inputs.DEVICE_PATH }}"
+        echo "Common Tree: ${{ github.event.inputs.COMMON_TREE }}"
+        echo "Common Branch: ${{ github.event.inputs.COMMON_TREE_BRANCH }}"
+        echo "Common Path: ${{ github.event.inputs.COMMON_PATH }}"
         echo "Device Name: ${{ github.event.inputs.DEVICE_NAME }}"
         echo "Build Target: ${{ github.event.inputs.BUILD_TARGET }}image"
 
@@ -143,6 +146,13 @@ jobs:
         cd android-recovery
         git clone ${{ github.event.inputs.DEVICE_TREE }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
         cd ${{ github.event.inputs.DEVICE_PATH }}
+        echo "COMMIT_ID=$(git rev-parse HEAD)" >> $GITHUB_ENV
+
+    - name: Clone common tree
+      run: |
+        cd android-recovery
+        git clone ${{ github.event.inputs.COMMON_TREE }} -b ${{ github.event.inputs.COMMON_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
+        cd ${{ github.event.inputs.COMMON_PATH }}
         echo "COMMIT_ID=$(git rev-parse HEAD)" >> $GITHUB_ENV
 
     - name: Check Build Makefile
