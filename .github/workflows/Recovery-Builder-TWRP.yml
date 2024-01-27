@@ -151,7 +151,7 @@ jobs:
     - name: Clone common tree
       run: |
         cd android-recovery
-        git clone ${{ github.event.inputs.COMMON_TREE }} -b ${{ github.event.inputs.COMMON_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
+        git clone ${{ github.event.inputs.COMMON_TREE }} -b ${{ github.event.inputs.COMMON_TREE_BRANCH }} ./${{ github.event.inputs.COMMON_PATH }}
         cd ${{ github.event.inputs.COMMON_PATH }}
         echo "COMMIT_ID=$(git rev-parse HEAD)" >> $GITHUB_ENV
 
