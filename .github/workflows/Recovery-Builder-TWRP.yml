@@ -29,7 +29,7 @@ on:
         description: 'Specify your Device Path' # As is, just like your DEVICE_PATH in your BoardConfig.mk
         required: true
         default: 'device/sony/maple_dsds'
-      COMMON_TREE_URL:
+      COMMON_TREE:
         description: 'Custom Common Tree' # Your already made Common Tree for TWRP
         required: true
         default: 'https://github.com/whatawurst/android_device_sony_yoshino-common'
