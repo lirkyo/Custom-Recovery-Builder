@@ -1,4 +1,4 @@
-name: Recovery-Builder-OFRP
+name: Recovery-Builder - OFRP
 
 on:
   workflow_dispatch:
