@@ -32,7 +32,7 @@ on:
       COMMON_TREE_URL:
         description: 'Custom Common Tree' # Your already made Common Tree for TWRP
         required: true
-        default: 'https://github.com/lirkyo/android_device_sony_yoshino-common'
+        default: 'https://github.com/whatawurst/android_device_sony_yoshino-common'
       COMMON_TREE_BRANCH:
         description: 'Custom Common Tree Branch' # Your Common Tree Branch, make sure it's right.
         required: true
